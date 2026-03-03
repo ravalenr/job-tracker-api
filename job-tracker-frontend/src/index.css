@@ -1,0 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161f;
+  --bg-hover: #1e1e2a;
+  --border: #2a2a3a;
+  --border-light: #353548;
+
+  --accent: #f0a500;
+  --accent-dim: rgba(240, 165, 0, 0.12);
+  --accent-hover: #f5b930;
+
+  --text-primary: #eeeef2;
+  --text-secondary: #8888a0;
+  --text-muted: #555568;
+
+  --status-applied: #3b82f6;
+  --status-applied-bg: rgba(59, 130, 246, 0.1);
+  --status-interview: #a855f7;
+  --status-interview-bg: rgba(168, 85, 247, 0.1);
+  --status-offer: #22c55e;
+  --status-offer-bg: rgba(34, 197, 94, 0.1);
+  --status-rejected: #ef4444;
+  --status-rejected-bg: rgba(239, 68, 68, 0.1);
+  --status-withdrawn: #6b7280;
+  --status-withdrawn-bg: rgba(107, 114, 128, 0.1);
+
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease forwards;
+}
