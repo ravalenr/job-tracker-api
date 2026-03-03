@@ -1,12 +1,23 @@
-FROM --platform=linux/amd64 maven:3.9.6-eclipse-temurin-21 AS build
+# Build the application
+FROM --platform=linux/amd64 maven:3.8.4-openjdk-17-slim AS build
 WORKDIR /app
+
+# Copy the pom.xml and source code
 COPY pom.xml .
-RUN mvn dependency:go-offline -B
 COPY src ./src
+
+# Build the JAR file
 RUN mvn clean package -DskipTests
 
-FROM --platform=linux/amd64 eclipse-temurin:21-jre
+# Run the application
+FROM --platform=linux/amd64 openjdk:17-jdk-slim
 WORKDIR /app
+
+# Copy the JAR from the build stage to the current stage
+
 COPY --from=build /app/target/*.jar app.jar
+
+# Expose the port
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "target/*.jar"]
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
