@@ -3,10 +3,10 @@ FROM --platform=linux/amd64 maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy only the pom.xml first to leverage Docker layer caching
-COPY pom.xml .
+COPY backend/pom.xml .
 
 # Copy the source code
-COPY src ./src
+COPY backend/src ./src
 
 # Build the JAR file
 RUN mvn clean package -DskipTests
