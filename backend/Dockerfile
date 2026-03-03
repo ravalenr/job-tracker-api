@@ -1,19 +1,17 @@
 # STAGE 1: Build the application using Maven
-FROM --platform=linux/amd64 maven:3.9.6-eclipse-temurin-17 AS build
+FROM --platform=linux/amd64 maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copy the pom.xml and source code
 COPY pom.xml .
 COPY src ./src
 
-# LIMIT MAVEN MEMORY USAGE
+# Keep the memory limit just to be safe on Railway's free tier
 ENV MAVEN_OPTS="-Xmx512m -XX:MaxMetaspaceSize=256m"
 
-# Build the JAR file
 RUN mvn clean package -DskipTests
 
 # STAGE 2: Run the application
-FROM --platform=linux/amd64 eclipse-temurin:17-jre-jammy
+FROM --platform=linux/amd64 eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
