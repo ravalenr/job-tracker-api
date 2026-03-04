@@ -1,4 +1,4 @@
-const BASE_URL = '/api/applications'
+const BASE_URL = 'https://job-tracker-api-ouah.onrender.com/api/applications'
 
 export const api = {
   getAll: async () => {
