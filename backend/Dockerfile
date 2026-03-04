@@ -1,5 +1,5 @@
 # STAGE 1: Build
-FROM --platform=linux/amd64 maven:3.9.6-eclipse-temurin-21 AS build
+FROM maven:3.9.6-amazoncorretto-21 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
@@ -7,7 +7,7 @@ ENV MAVEN_OPTS="-Xmx512m -XX:MaxMetaspaceSize=256m"
 RUN mvn clean package -DskipTests
 
 # STAGE 2: Run
-FROM --platform=linux/amd64 eclipse-temurin:21-jre-jammy
+FROM amazoncorretto:21
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
