@@ -97,7 +97,7 @@ export default function App() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <a
-            href="http://localhost:8080/swagger-ui/index.html"
+            href="https://job-tracker-api-ouah.onrender.com/swagger-ui/index.html"
             target="_blank"
             rel="noreferrer"
             style={{
