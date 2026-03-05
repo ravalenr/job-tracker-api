@@ -2,7 +2,7 @@
 
 A full-stack application for managing and tracking job applications through every stage of the hiring process.
 
-> **Live App:** `[https://job-tracker-api-lemon.vercel.app/]`
+> **Live App:** [https://job-tracker-api-lemon.vercel.app/]
 > **API Docs:** [https://job-tracker-api-ouah.onrender.com/swagger-ui/index.html](https://job-tracker-api-ouah.onrender.com/swagger-ui/index.html)
 
 > Disclaimer: the API is hosted on Render's free tier — the first request after a period of inactivity may take 30 seconds to wake up.
