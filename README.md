@@ -13,6 +13,8 @@ A full-stack application for managing and tracking job applications through ever
 
 Job Tracker helps you manage the full cycle of a job search — from the first application to the final offer. Track statuses, add notes, attach job URLs, and monitor your pipeline at a glance through a real-time stats dashboard.
 
+<img width="1913" height="921" alt="Screenshot 2026-03-05 at 10 40 19" src="https://github.com/user-attachments/assets/af75c906-fd98-4dec-9365-87d4690cfe87" />
+
 ---
 
 ## Project Structure
